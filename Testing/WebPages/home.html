@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-red w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button w3-black"><i class="fa fa-home"> HOME</i></a> 
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"> SEARCH</i></a> 
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"> ENVELOPE</i></a> 
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"> GLOBE</i></a>
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-trash"> TRASH</i></a> 
+</div>
+
+<!-- Page Content -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div>
+  <button class="w3-button w3-lightblue w3-xxlarge" onclick="w3_open()">&#9776;</button>
+ 
+</div>
+     
+
+<!-- <img src="https://wallpaperaccess.com/full/1312729.jpg" class="w3-round" alt="burger" width="100%" height="700">
+
+<br>
+
+<form action="click" method="POST">
+{% csrf_token %}
+<div class="w3-container" >
+    <h2>Card Example</h2>
+  
+    <div class="w3-card-4 w3-dark-grey" style="width:50%">
+  
+      <div class="w3-container w3-center">
+        <h3>Friend Request</h3>
+        <img src="https://image.freepik.com/free-photo/eating-delicious-fast-foood_109710-3110.jpg" alt="Avatar" style="width:80%">
+        <h5>John Doe</h5>
+  
+        <div class="w3-section" id = "option">
+ 
+          <button class="w3-button w3-green" name = "Accept" value="accept">Accept</button>
+
+          <button class="w3-button w3-red" name ="Accept" value="decline">Decline</button>
+        
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</form>
+-->
+
+
+
+<div class="w3-container w3-red">
+  <h2>Large List</h2>
+  <p>The w3-large class creates a large list.</p>
+
+  <ul class="w3-ul w3-large">
+
+    {% for x in Test_obj %}
+    <li>{{x.id}} {{x.name}} {{x.number}} {{x.des}}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+<div class="w3-container w3-green">
+  <h2>Basic Table</h2>
+  <p>The w3-table class defines a basic table:</p>
+ 
+  <table class="w3-table">
+   
+    <tr class="w3-serif">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Descripton</th>
+    </tr>
+    {% for x in Test_obj %}
+
+    <tr class="w3-cursive w3-large">
+      <td>{{x.id}}</td>
+      <td>{{x.name}}</td>
+      <td>{{x.number}}</td>
+      <td>{{x.des}}</td>
+      <td><a  href = "{%  url 'delete' x.id %} "><button type="button">Delete</button></a></td>
+      
+    </tr><script src=""></script>
+
+    {% endfor %}
+
+  </table>
+</div>
+
+<form action="drop"  method="POST">
+  {% csrf_token %}
+  <label for="cars">Choose a car:</label>
+  <select id="cars" name="Cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+  <input type="submit">
+</form>
+
+
+<form action="insert" method="get" target="_blank">
+  <label for="fname">First name:</label>
+  <input type="text" id="name" name="name"><br><br>
+  <label for="num">number:</label>
+  <input type="text" id="num" name="num"><br><br>
+  <label for="des">Description:</label>
+  <input type="text" id="des" name="des"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+          
+</body>
+
+<style>
+
+body { 
+  background-image: url(https://foundartacademy.org/x/cdn/?https://storage.googleapis.com/production-websitebuilder-v1-0-1/551/126551/RT2iAhcb/b8623048aa8b42a78523c55aceb6a1ec); 
+}
+
+</style>
+
+
+</html>

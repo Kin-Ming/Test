@@ -1,0 +1,57 @@
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+table {
+  border-collapse: collapse;
+  width:50%;
+}
+
+th {
+  text-align: center;
+  padding: 8px;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #FFD5D5}
+
+th {
+  background-color: #0000FF;
+  color: white;
+}
+.table-wrapper
+{
+    border: 1px solid red;
+    width: 1000px;
+    height: 500px;
+    overflow: auto;
+}
+
+</style>
+
+  <body>
+    <div class="table-wrapper">
+       {{loaded_data|safe}}
+    </div>
+ </body>
+
+
+ <div class="w3-container w3-red">
+  <h2>Large List</h2>
+  <p>The w3-large class creates a large list.</p>
+
+  <ul class="w3-ul w3-large">
+
+    {% for x in Test %}
+    <li>{{x.id}} {{x.document}} {{x.uploaded_at}} {{x.description}}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+
+  

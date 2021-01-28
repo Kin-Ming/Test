@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<style>
+
+
+</style>
+
+<body>
+<h style="font-family:verdana;">{{Cars}}</h>
+
+<form action = "pandas" method = "POST" enctype="multipart/form-data">
+    {% csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Upload</button>
+</form>
+
+
+</form>
+
+
+
+
+
+
+</body>
+</html>
